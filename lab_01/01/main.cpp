@@ -6,7 +6,7 @@
 
 int main()
 {
-    std::vector<size_t> v = { 7, 1, 12, 5, 9, 20, 14, 3, 16, 10, 2 };
+    std::vector<size_t> v = { 7, 1, 12, 5, 9 };
     std::sort(v.begin(), v.end());
     boost::timer t;
     t.restart();
