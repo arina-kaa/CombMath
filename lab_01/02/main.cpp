@@ -10,7 +10,7 @@ enum Direction
 };
 
 // utility functions for finding the position of largest mobile integer in a[]
-int searchArr(int a[], int n, int mobile)
+int SearchArr(int a[], int n, int mobile)
 {
     for (int i = 0; i < n; i++)
         if (a[i] == mobile)
@@ -18,7 +18,7 @@ int searchArr(int a[], int n, int mobile)
 }
 
 // to carry out step 1 of the algorithm to find the largest mobile integer.
-int getMobile(int a[], Direction dir[], int n)
+int GetMobile(int a[], Direction dir[], int n)
 {
     int mobile_prev = 0, mobile = 0;
     for (int i = 0; i < n; i++)
@@ -47,10 +47,10 @@ int getMobile(int a[], Direction dir[], int n)
 }
 
 // getting a single permutation 
-void getNextPermutation(int a[], Direction dir[], int n)
+void GetNextPermutation(int a[], Direction dir[], int n)
 {
-    int mobile = getMobile(a, dir, n);
-    int pos = searchArr(a, n, mobile);
+    int mobile = GetMobile(a, dir, n);
+    int pos = SearchArr(a, n, mobile);
 
     // swapping the elements according to the direction 
     if (dir[a[pos - 1] - 1] == Direction::RIGHT_TO_LEFT)
@@ -75,7 +75,7 @@ void getNextPermutation(int a[], Direction dir[], int n)
     cout << endl;*/
 }
 
-int fact(int n)
+int Fact(int n)
 {
     int res = 1;
     for (int i = 1; i <= n; i++)
@@ -105,8 +105,8 @@ int main()
         dir[i] = Direction::RIGHT_TO_LEFT;
 
     // for generating permutations in the order
-    for (int i = 1; i < fact(n); i++)
-        getNextPermutation(a, dir, n);
+    for (int i = 1; i < Fact(n); i++)
+        GetNextPermutation(a, dir, n);
 
     double duration = t.elapsed();
     cout << duration << endl;
